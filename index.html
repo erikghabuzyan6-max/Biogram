@@ -39,12 +39,7 @@ body {
   margin-bottom: 10px;
 }
 
-.card p {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-/* Сетка альбомов */
+/* Сетка кнопок */
 .album-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -52,6 +47,7 @@ body {
   margin-top: 20px;
 }
 
+/* Карточка кнопки */
 .album-card {
   background: rgba(255,255,255,0.1);
   border-radius: 10px;
@@ -62,7 +58,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none; /* убираем подчеркивание ссылок */
+  text-decoration: none;
 }
 
 .album-card:hover {
@@ -82,6 +78,7 @@ body {
   margin: 0;
   font-size: 14px;
   color: #fff;
+  text-align: center;
 }
 </style>
 </head>
@@ -92,28 +89,28 @@ body {
 
   <div class="album-container">
     <!-- TikTok -->
-    <a href="https://www.tiktok.com/@blood_on_my_body_?_r=1&_t=ZS-93u9lx91ZL8" target="_blank" class="album-card">
+    <div class="album-card" onclick="window.open('https://www.tiktok.com/@blood_on_my_body_?_r=1&_t=ZS-93u9lx91ZL8','_blank')">
       <img src="https://i.imgur.com/wRx4n83.png" alt="TikTok">
       <p>TikTok</p>
-    </a>
+    </div>
 
     <!-- Instagram -->
-    <a href="https://www.instagram.com/psycho__e?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" class="album-card">
+    <div class="album-card" onclick="window.open('https://www.instagram.com/psycho__e?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr','_blank')">
       <img src="https://i.imgur.com/4ikij81.png" alt="Instagram">
       <p>Instagram</p>
-    </a>
+    </div>
 
-    <!-- Apple Music -->
-    <a href="https://t.me/blood_on_music" target="_blank" class="album-card">
+    <!-- Apple Music / Telegram -->
+    <div class="album-card" onclick="window.open('https://t.me/blood_on_music','_blank')">
       <img src="https://i.imgur.com/uRzVQ3h.png" alt="Apple Music">
       <p>Apple Music</p>
-    </a>
+    </div>
 
     <!-- Discord -->
-    <a href="https://discord.gg/zmmUvnTR" target="_blank" class="album-card">
+    <div class="album-card" onclick="window.open('https://discord.gg/zmmUvnTR','_blank')">
       <img src="https://i.imgur.com/juIye6T.png" alt="Discord">
       <p>Discord</p>
-    </a>
+    </div>
   </div>
 </div>
 
