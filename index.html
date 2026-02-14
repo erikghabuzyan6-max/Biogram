@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ᛒᚳᛜᛜᚦ_ᛜᚻ_ᛖᛉ_ᛒᛜᚦᛉ</title>
+
+<!-- Подключаем шрифт с Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: url('bg.gif') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Arial', sans-serif;
+  font-family: 'MedievalSharp', Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,46 +24,60 @@ body {
 
 /* Карточка */
 .card {
-  background: rgba(0,0,0,0.6);
-  padding: 30px;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
   border-radius: 15px;
   text-align: center;
-  width: 400px;
+  width: 90%;
+  max-width: 420px;
+  box-sizing: border-box;
 }
 
-/* SD-диски */
-.sd-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+/* Заголовки и текст */
+.card h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Сетка альбомов */
+.album-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
   margin-top: 20px;
-  gap: 15px;
 }
 
-.sd-card {
+.album-card {
   background: rgba(255,255,255,0.1);
   border-radius: 10px;
-  padding: 10px;
-  width: 100px;
-  transition: transform 0.3s, background 0.3s;
+  overflow: hidden;
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.sd-card:hover {
-  transform: scale(1.1);
-  background: rgba(255,255,255,0.2);
+.album-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
 }
 
-.sd-card img {
-  width: 80px;
-  height: 80px;
+.album-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 5px;
+  display: block;
 }
 
-.sd-card p {
-  margin: 5px 0 0;
+.album-card p {
+  margin: 5px 0;
   font-size: 14px;
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  padding: 2px 0;
 }
 </style>
 </head>
@@ -70,18 +89,22 @@ body {
   <p>ᚻᚣᛖᛊ/ᚺᚺᚺᚺ</p>
   <p>ᚹᛊᚣᛈᛊᚪᛋᚳ</p>
 
-  <div class="sd-container">
-    <div class="sd-card">
-      <img src="sd1.png" alt="SD1">
-      <p>SD Card 1</p>
+  <div class="album-container">
+    <div class="album-card">
+      <img src="albums/album1.png" alt="Album 1">
+      <p>Album 1</p>
     </div>
-    <div class="sd-card">
-      <img src="sd2.png" alt="SD2">
-      <p>SD Card 2</p>
+    <div class="album-card">
+      <img src="albums/album2.png" alt="Album 2">
+      <p>Album 2</p>
     </div>
-    <div class="sd-card">
-      <img src="sd3.png" alt="SD3">
-      <p>SD Card 3</p>
+    <div class="album-card">
+      <img src="albums/album3.png" alt="Album 3">
+      <p>Album 3</p>
+    </div>
+    <div class="album-card">
+      <img src="albums/album4.png" alt="Album 4">
+      <p>Album 4</p>
     </div>
   </div>
 </div>
