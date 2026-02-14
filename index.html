@@ -58,6 +58,10 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .album-card:hover {
@@ -66,18 +70,17 @@ body {
 }
 
 .album-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
   display: block;
+  margin-bottom: 8px;
 }
 
 .album-card p {
-  margin: 5px 0;
+  margin: 0;
   font-size: 14px;
   color: #fff;
-  background: rgba(0,0,0,0.4);
-  padding: 2px 0;
 }
 </style>
 </head>
@@ -86,23 +89,22 @@ body {
 <div class="card">
   <h1>ᛖᛉ ᛢᛜᛈᛙᚣᚳ ᛖᛊᚦᛙᚣ</h1>
 
-
   <div class="album-container">
     <div class="album-card">
-      <img src="albums/album1.png" alt="Album 1">
-      <p>Tik Tok</p>
+      <img src="icons/tiktok.png" alt="TikTok">
+      <p>TikTok</p>
     </div>
     <div class="album-card">
-      <img src="albums/album2.png" alt="Album 2">
+      <img src="icons/instagram.png" alt="Instagram">
       <p>Instagram</p>
     </div>
     <div class="album-card">
-      <img src="albums/album3.png" alt="Album 3">
+      <img src="icons/discord.png" alt="Discord">
       <p>Discord</p>
     </div>
     <div class="album-card">
-      <img src="albums/album4.png" alt="Album 4">
-      <p>My playlist</p>
+      <img src="icons/playlist.png" alt="My Playlist">
+      <p>My Playlist</p>
     </div>
   </div>
 </div>
