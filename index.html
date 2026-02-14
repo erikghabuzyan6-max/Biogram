@@ -1,42 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ᛒᚳᛜᛜᚦ_ᛜᚻ_ᛖᛉ_ᛒᛜᚦᛉ </title>
-
+<title>Erik Biogram</title>
 <style>
+/* --- Стили страницы --- */
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background: url("bg.gif") no-repeat center center fixed;
-    background-size: cover;
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('bg.gif') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
+/* Карточка с текстом */
 .card {
-    background: rgba(0,0,0,0.6);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    width: 300px;
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 350px;
+  position: relative;
+}
+
+/* Плеер */
+.audio-player {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Кнопка play/pause */
+.play-btn {
+  background: #ff4b5c;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: transform 0.2s;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Анимация волн */
+.wave {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+  gap: 4px;
+}
+
+.wave span {
+  display: block;
+  width: 6px;
+  height: 10px;
+  background: #ff4b5c;
+  animation: wave 1s infinite;
+}
+
+.wave span:nth-child(1) { animation-delay: 0s; }
+.wave span:nth-child(2) { animation-delay: 0.1s; }
+.wave span:nth-child(3) { animation-delay: 0.2s; }
+.wave span:nth-child(4) { animation-delay: 0.3s; }
+.wave span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave {
+  0%, 100% { height: 10px; }
+  50% { height: 35px; }
 }
 </style>
 </head>
-
 <body>
 
 <div class="card">
-    <h1>ᛇᛋᛢᛠ ᛖᛉ ᛙᚻᚪᛜ</h1>
-    <p>ᚻᚣᛖᛊ/ᚺᚺᚺᚺ</p>
-    <p>ᚣᛩᛊ/16</p>
-    <p>ᚹᛊᚣᛈᛊᚪᛋᚳ</p>
+  <h1>🩸 Just My Info</h1>
+  <p>Nickname: Erik</p>
+  <p>Telegram: @yourusername</p>
+  <p>Status: Biogram Creator</p>
+
+  <div class="audio-player">
+    <button class="play-btn" onclick="toggleAudio()">▶ Play</button>
+    <div class="wave">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <audio id="myAudio" src="music.mp3"></audio>
 </div>
+
+<script>
+let audio = document.getElementById('myAudio');
+let btn = document.querySelector('.play-btn');
+
+function toggleAudio() {
+  if (audio.paused) {
+    audio.play();
+    btn.textContent = '⏸ Pause';
+  } else {
+    audio.pause();
+    btn.textContent = '▶ Play';
+  }
+}
+</script>
 
 </body>
 </html>
-
